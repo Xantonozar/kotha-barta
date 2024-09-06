@@ -1,0 +1,42 @@
+.pic1{
+    position: absolute;
+    bottom: 0px;
+    background-color: transparent;
+  z-index: 5;
+}
+.pic2{
+    position: absolute;
+    
+    bottom: 45px;
+    background-color:inherit;
+    z-index: 1;
+}
+.pic3{
+    position: absolute;
+    top: 0px;
+    background-color:inherit;
+    z-index: 1;
+}
+.logo {
+    position: absolute;
+    top: 35%;
+  right: 00%;
+   scale: 0.7;
+    transform: rotateY(180deg);
+    padding: 0;
+
+    background-color: transparent;
+    border-radius: 50%;
+ display: none;
+
+    z-index: 9;
+    transition: all 0.5s ease-in-out;
+    
+}
+.design {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}

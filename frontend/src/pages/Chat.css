@@ -1,0 +1,14 @@
+
+.chat-sidebar {
+ 
+    background: #000;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+}
+.chat-body {
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+}

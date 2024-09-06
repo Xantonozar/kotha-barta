@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+.my-chats  {
+  
+    width: 35vw;
+    background: #95d5b2;
+    height: 100%;
+    
+    
+}
+.res-full {
+    width: 100vw !important;
+}
+.search-label {
+  
+    background-color: #c7f9cc !important;
+  
+ 
+}
+.search-input {
+    background-color: #c7f9cc !important;
+    font-weight: 600;
+    font-size: 1.2rem;
+    padding-left: 10px;
+    
+}
+.search-input::placeholder {
+  font-weight: 600;
+  font-size: 1.2rem;
+  padding-left: 10px;
+    
+}
+.search-icon {
+    scale: 1.4;
+}
+.drawer-side {
+    width: 100% !important;
+   
+}
+
+.drawer-content {
+ 
+}
+.drawer-overlay{
+    opacity: 0;
+    
+}
+.add-user {
+  margin: 30px auto;
+    width: 90%;
+    background-color: #c7f9cc !important;
+    border-radius: 1000px;
+    color: #2d6a4f !important;
+    font-family: "Merriweather", serif;
+    font-weight: 900;
+    font-style: normal;
+    border-color: #2d6a4f !important;
+    font-size: 1.3rem;
+}
+.menu-drawer{
+    width: 35vw;
+    background-color:#95d5b2 ;
+
+}
+.show-users{
+    background-color: #c7f9cc !important;
+    border-radius: 10px;
+    color: #2d6a4f !important;
+    font-family: "Merriweather", serif;
+    font-weight: 900;
+    font-style: normal;
+    border-color: #2d6a4f !important;
+    font-size: 1.3rem;
+}
+.skel-load > .skeleton {
+background-color: #c7f9cc;
+}

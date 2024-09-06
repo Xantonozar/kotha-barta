@@ -1,0 +1,19 @@
+.noti {
+    scale: 1.8;
+}
+.nav-head {
+    width: 100vw;
+    background: #52b788;
+    color: #081c15;
+    padding: 10px;
+}
+.my-profile {
+    height: 400px;
+    background-color: #d8f3dc;
+}
+.profile-list {
+    background-color: #95d5b2;
+}
+.my-pic {
+    scale: 2.5;
+}

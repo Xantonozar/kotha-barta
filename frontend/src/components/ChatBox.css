@@ -1,0 +1,9 @@
+.my-chat-box {
+    width: 65vw;
+    background: #c7f9cc;
+    height: 100%;
+    flex-grow: 1;
+}
+.dis-none {
+    display: none;
+}

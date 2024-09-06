@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Protest+Guerrilla&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
+body {
+    background: #b7e4c7;
+    background: url('./circle-scatter-haikei\ \(2\).svg') !important;
+    background-size: cover !important;
+}
+.container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 70vh;
+    width: 60vw;
+    background-color: #95d5b2;
+    border-radius: 30px;
+    overflow: hidden;
+
+}
+.left {
+    position: absolute;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    height: 100%;
+    width: 50%;
+    background-color: #57cc99;
+    transition: all 1s ease-in-out;
+    border-top-right-radius: 20%;
+    border-bottom-right-radius:20%;
+    z-index: 2;
+
+}
+.action {
+    transform: translateX(100%);
+    z-index: 11;
+    transition: all 1s ease-in-out;
+    border-top-right-radius: 0%;
+    border-bottom-right-radius:0%;
+    border-top-left-radius: 20%;
+    border-bottom-left-radius:20%;
+}
+.normal {
+    transform: translateX(-100%);
+    z-index: 11;
+    transition: all 1s ease-in-out;
+    border-top-right-radius: 0%;
+    border-bottom-right-radius:0%;
+  
+}
+
+
+.right {
+    position: absolute;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    height: 100%;
+    width: 50%;
+    background-color: #95d5b2;
+    overflow: none;
+   z-index: 1;
+   transition: all 1s ease-in-out;
+
+  
+ 
+}
+.one {
+
+}
+
+@media screen and (max-width: 768px) {
+    .right {
+        display: none;
+    }
+    .left{
+        width: 100%;
+        border-radius: 0px;
+    }
+    .container{
+        border-radius: 0px;
+    }
+    
+}
+@media screen and (max-width: 928px) {
+.container{
+    width: 100vw;
+    height:100vh;
+}
+}
+@keyframes slideright {
+    0% {
+        transform: translateX(0%);
+    }
+    1%{
+        opacity: 70%;
+    }
+    100% {
+        transform: translateX(100%);
+        opacity: 100%;
+    }
+}
+@keyframes slideleft {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.login {
+    z-index: 9;
+    position: absolute;
+    top: 50%;
+    right: 10%;
+    
+    transform: translateY( -50%);
+    text-align: center;
+    font-family: "Protest Guerrilla", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 2.5rem;
+    color: #ffffff;
+    z-index: 11;
+}
+
