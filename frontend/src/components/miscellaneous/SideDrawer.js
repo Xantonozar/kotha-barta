@@ -4,9 +4,12 @@ import { useState } from 'react';
 import { ChatState } from '../../context/ChatProvider';
 import { useHistory } from 'react-router-dom';
 import { useToast } from '@chakra-ui/react';
+import axios from 'axios';
+import { ArrowBackIcon,Search2Icon } from '@chakra-ui/icons';
+import { useEffect } from 'react';
 import './SideDrawer.css'
 const SideDrawer = () => {
-  const { user , setSelectedChat , chats , setchats , notification , setNotification } = ChatState();
+  const { user , setSelectedChat , selectedChat , chats , setchats , notification , setNotification } = ChatState();
   const [search, setsearch] = useState("");
   const [searchResult, setsearchResult] = useState([]);
   const [loading, setloading] = useState(false);
@@ -16,31 +19,151 @@ const SideDrawer = () => {
 const history = useHistory();
 const logoutHandler = () => {
   localStorage.removeItem("userInfo");
+  console.log(userInfo);
+  
   history.push("/");
 };
 const userInfo =JSON.parse(localStorage.getItem("userInfo"));
-{console.log(user);
-}
-const toast = useToast();
-  return (
-    <>
-    <div className="nav-head navbar bg-base-100 h-15">
 
+const toast = useToast();
+const accessChat = async  (userId)=>{
+
+  
+  setloadingchat(true);
+  if(!search){
+    toast({
+      title: "Please Fill the search feild",
+      status: "warning",
+      duration: 5000,
+      isClosable: true,
+      position: "top-left",
+    });
+    return;
+  }
+  try{
+   
+    
+    const config = {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${user.token}`,
+      },
+    };
+    const { data } = await axios.post( "http://localhost:5000/api/chat", { userID: userId}, config);
+if(!chats.find((c)=>c._id === data._id)){
+setchats([data,...chats]);
+  }
+console.log(data);
+
+    setSelectedChat(data);
+    setloadingchat(false);
+    setsearchResult([]);
+    
+    history.push(`/chat/${data._id}`);
+  }catch(error){
+    toast({
+      title: "Error Occured",
+      description: "Failed to Load the Search Result",
+      status: "error",
+      duration: 5000,
+      isClosable: true,
+      position: "bottom-left",
+    });
+    setloading(false);
+}
+
+}
+const HandleSearch =async ()=>{
+  if( search.length < 3){
+    toast({
+      title: "Minimum 3 letters required",
+      status: "warning",
+      duration: 1000,
+      isClosable: true,
+      position: "top-right",
+    });
+    return;
+  }
+try{
+  setloading(true);
+  const config = {
+    headers: {
+      Authorization: `Bearer ${user.token}`,
+    },
+  };
+  const { data } = await axios.get(`http://localhost:5000/api/user?search=${search}`, config);
+
+  setloading(false);
+  setsearchResult(data);
+  
+}catch(error){
+  toast({
+    title: "Error Occured",
+    description: "Failed to Load the Search Result",
+    status: "error",
+    duration: 5000,
+    isClosable: true,
+    position: "bottom-left",
+  });
+  setloading(false);
+  setsearchResult([]);
+  
+}
+
+  }
+  useEffect(() => {
+    setDeviceWidth(window.innerWidth);
+  }, [])
+  
+const [deviceWidth, setDeviceWidth] = useState()
+  useEffect(() => {
+    const handleResize = () => {
+      setDeviceWidth(window.innerWidth);
+      
+    };
+
+    window.addEventListener('resize', handleResize);  
+const myChats = document.querySelector('.chat-bar');
+if(deviceWidth < 1050 ){
+if(selectedChat){
+  myChats.classList.add('dis-none');
+
+}else{
+myChats.classList.remove('dis-none');
+}
+   
+  
+ 
+}else{
+myChats.classList.remove('dis-none');
+
+}
+  })
+  
+  return (
+    <div className='chat-bar'>
+    <div className="nav-head navbar  h-15">
+    
     <div className="flex-none">
-    <button className="btn btn-square btn-ghost">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        className="inline-block h-5 w-5 stroke-current">
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth="2"
-          d="M4 6h16M4 12h16M4 18h16"></path>
-      </svg>
-    </button>
+      
+    <label htmlFor="my-drawer" className="search-user items-center gap-2">
+
+
+    <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 16 16"
+    fill="currentColor"
+    className="h-9 ml-4 w-9 opacity-70">
+    <path
+      fillRule="evenodd"
+      d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z"
+      clipRule="evenodd" />
+  </svg>
+  
+    </label>
+
   </div>
+  
   <div className="flex-1">
     <a className="btn btn-ghost text-xl">Kotha - Barta</a>
   </div>
@@ -110,7 +233,8 @@ const toast = useToast();
     <button>close</button>
   </form>
 </dialog>
-</>
+
+</div>
   )
 }
 

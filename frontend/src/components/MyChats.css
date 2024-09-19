@@ -3,8 +3,8 @@
   
     width: 35vw;
     background: #95d5b2;
-    height: 100%;
-    
+    height:90vh ;
+    overflow: scroll;
     
 }
 .res-full {
@@ -62,7 +62,7 @@
 
 }
 .show-users{
-    background-color: #c7f9cc !important;
+    background-color: transparent !important;
     border-radius: 10px;
     color: #2d6a4f !important;
     font-family: "Merriweather", serif;
@@ -70,7 +70,14 @@
     font-style: normal;
     border-color: #2d6a4f !important;
     font-size: 1.3rem;
+    
 }
 .skel-load > .skeleton {
 background-color: #c7f9cc;
+}
+.send-msg>p{
+    font-size: medium;
+}
+.dis-none {
+    display: none;
 }

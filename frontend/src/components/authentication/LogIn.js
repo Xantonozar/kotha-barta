@@ -53,8 +53,11 @@ const LogIn = () => {
       localStorage.setItem("userInfo", JSON.stringify(data));
       console.log(localStorage.getItem("userInfo"));
       
+      setTimeout(() => {
+        history.push("/chats");
+      }, 1000);
       setloading(false);
-      history.push("/chats");
+      
     } catch (error) {
       toast({
         title: 'Error Occured!',

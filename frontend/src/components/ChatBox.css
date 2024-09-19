@@ -1,9 +1,21 @@
 .my-chat-box {
     width: 65vw;
     background: #c7f9cc;
-    height: 100%;
+    height: 90vh;
     flex-grow: 1;
+    overflow-y: scroll;
 }
 .dis-none {
     display: none;
+}
+.res-full {
+    width: 100vw !important;
+   height: 100vh ;
+
+}
+.res-full > .send-message {
+    width: 90vw !important;
+}
+body{
+  overflow-x: hidden;
 }

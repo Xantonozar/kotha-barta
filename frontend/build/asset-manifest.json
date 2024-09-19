@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/static/css/main.016fd6cc.css",
+    "main.js": "/static/js/main.8362e678.js",
+    "static/js/453.d855a71b.chunk.js": "/static/js/453.d855a71b.chunk.js",
+    "static/media/Screenshot_2024-09-05_053013-removebg-preview.png": "/static/media/Screenshot_2024-09-05_053013-removebg-preview.d4f553eea1192d7c1793.png",
+    "static/media/eyes.png": "/static/media/eyes.5abfca452133f99df484.png",
+    "static/media/Family Values - Talking.png": "/static/media/Family Values - Talking.a913fad78269052e2402.png",
+    "static/media/Family Values - Balcony.png": "/static/media/Family Values - Balcony.1624ab6ecabea87ae95a.png",
+    "static/media/fmo.png": "/static/media/fmo.e6c5d57e0c3145efc12a.png",
+    "static/media/Hands - Arrow.png": "/static/media/Hands - Arrow.41f6a4b1b2f863197485.png",
+    "static/media/logo.svg": "/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/index.html",
+    "static/media/circle-scatter-haikei (2).svg": "/static/media/circle-scatter-haikei (2).5a4fd2cda29f67db0580.svg",
+    "main.016fd6cc.css.map": "/static/css/main.016fd6cc.css.map",
+    "main.8362e678.js.map": "/static/js/main.8362e678.js.map",
+    "453.d855a71b.chunk.js.map": "/static/js/453.d855a71b.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.016fd6cc.css",
+    "static/js/main.8362e678.js"
+  ]
+}

@@ -1,0 +1,42 @@
+.send-message::placeholder {
+  color: black !important;
+
+  
+}
+.send-message{
+    position: fixed;
+    bottom: 5px;
+    
+ width: 62vw !important;
+  
+}
+@media screen and (max-width: 1000px) {
+  .send-message {
+    width: 90vw !important;
+  }
+}
+.single-chat {
+    height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scrollbar-width: 0;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 2;
+    
+}
+.single-chat-box {
+ 
+  overflow-y: scroll;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  scrollbar-width: 0;
+  margin-bottom: 60px !important;
+}
+.edit {
+  background: transparent !important;
+}
+body{
+  overflow-x: hidden;
+}

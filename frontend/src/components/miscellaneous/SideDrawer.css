@@ -6,6 +6,7 @@
     background: #52b788;
     color: #081c15;
     padding: 10px;
+    height: 10vh !important;
 }
 .my-profile {
     height: 400px;
@@ -16,4 +17,14 @@
 }
 .my-pic {
     scale: 2.5;
+}
+.chat-bar {
+   
+}
+.search-user {
+    background-color:transparent !important;
+   
+}.dis-none{
+    display: none;
+    
 }

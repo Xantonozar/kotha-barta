@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import SideDrawer from '../components/miscellaneous/SideDrawer'
 import MyChats from '../components/MyChats'
 import ChatBox from '../components/ChatBox'
@@ -6,10 +6,20 @@ import { useState } from 'react'
 import './Chat.css'
 import { ChatState } from '../context/ChatProvider'
 const Chats = () => {
-    const {user} = ChatState()
+    const {selectedChat , user} = ChatState()
     const [fetchAgain, setfetchAgain] = useState(false)
+useEffect(() => {
+  if(selectedChat){
+    const myChat = document.querySelector('.chat-body');
+  myChat.scrollTop = myChat.scrollHeight
+  console.log(myChat.scrollTop);
+  
+  }
+})
+
+
   return (
-    <>
+    <div className='chat-body'>
 <div className='chat-sidebar flex '>
 
 {user && <SideDrawer/>}
@@ -19,8 +29,9 @@ const Chats = () => {
 {user && <ChatBox fetchAgain={fetchAgain} setfetchAgain={setfetchAgain}/>}
 </div>
 </div>
+
     
-    </>
+    </div>
   )
 }
 
