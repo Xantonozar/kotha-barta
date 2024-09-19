@@ -43,7 +43,7 @@ const MyChats = (fetchAgain) => {
             Authorization: `Bearer ${user.token}`,
           },
         };
-        const { data } = await axios.post( "http://localhost:5000/api/chat", { userID: userId}, config);
+        const { data } = await axios.post( "/api/chat", { userID: userId}, config);
     if(!chats.find((c)=>c._id === data._id)){
     setchats([data,...chats]);
       }
@@ -86,7 +86,7 @@ const MyChats = (fetchAgain) => {
             Authorization: `Bearer ${user.token}`,
           },
         };
-        const { data } = await axios.get(`http://localhost:5000/api/user?search=${search}`, config);
+        const { data } = await axios.get(`/api/user?search=${search}`, config);
       
         setloading(false);
         setsearchResult(data);
@@ -113,9 +113,10 @@ const MyChats = (fetchAgain) => {
                       Authorization: `Bearer ${user.token}`
                   }
               }
-              const { data } = await axios.get("http://localhost:5000/api/chat",config)
+              const { data } = await axios.get("/api/chat",config)
               setchats(data)
           } catch (error) {
+              window.location.reload()
               console.error(error)
               toast({
                   title: "Error Occured!",
