@@ -20,7 +20,7 @@ const LogIn = () => {
     setAnimation(false);
   };
   const handleSubmit = async () => {
-    alert("hello")
+   
     setloading(true);
     if (!email || !password) {
       toast({
@@ -34,13 +34,14 @@ const LogIn = () => {
       return;
     }
     try {
+      alert("logging in");
       const config = {
         headers: {
           "Content-type": "application/json",
         },
       };
       const { data } = await axios.post(
-        "http://localhost:5000/api/user/login",
+        "/api/user/login",
         { email, password },
         config
       );
