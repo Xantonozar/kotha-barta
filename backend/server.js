@@ -37,6 +37,12 @@ if (process.env.NODE_ENV === 'production') {
         res.send('API is running');
     });
 }
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*'); // Replace '*' with specific domains if needed
+    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+    res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+    next();
+  });
 app.use(notFound);
 app.use(errorHandler);
 
@@ -62,7 +68,7 @@ const server = require('http').createServer(app);
 // );
 const io = socketIo(server, {
     cors: {
-        origin: "http://localhost:3000",
+        origin: "*",
         methods: ["GET", "POST"],
         allowedHeaders: ["my-custom-header"],
         credentials: true
