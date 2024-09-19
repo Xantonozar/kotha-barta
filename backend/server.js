@@ -68,7 +68,7 @@ const server = require('http').createServer(app);
 // );
 const io = socketIo(server, {
     cors: {
-        origin: "https://your-client-url.com",
+        origin: "https://kotha-barta.onrender.com",
         methods: ["GET", "POST"],
         allowedHeaders: ["my-custom-header"],
         credentials: true
