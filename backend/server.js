@@ -153,13 +153,9 @@ io.on("connection",(socket)=>{
 
     
       // Handle user disconnection
-      // socket.on('disconnect', () => {
-      //   const roomName = rooms[socket.id];
-      //   if (roomName) {
-      //     delete rooms[socket.id]; // Remove user from room list
-      //     socket.broadcast.to(roomName).emit('user left', socket.id); // Broadcast user leaving message to the room (excluding sender)
-      //   }
-      // })
+      socket.on('disconnect', () => {
+      console.log("discoonected");
+      })
       socket.off("setup",()=>{
         console.log("user disconnected");
         socket.leave(userData._id);
