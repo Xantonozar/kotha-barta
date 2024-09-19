@@ -112,6 +112,10 @@ io.on("connection",(socket)=>{
             console.log(user._id);
           
         })
+socket.off("setup",()=>{
+        console.log("user disconnected");
+        socket.leave(userData._id);
+      })
     })
 
     
