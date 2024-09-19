@@ -75,7 +75,7 @@ const SingleChat = (fetchAgain,setfetchAgain) => {
                 };
                 
                
-                const {data} = await axios.post("http://localhost:5000/api/message",{
+                const {data} = await axios.post("/api/message",{
                     content: newMessage,
                     chatID: selectedChat._id
                 },config);
@@ -125,7 +125,7 @@ scrollToBottom()
                 Authorization: `Bearer ${user.token}`
             }
         };
-        const {data} = await axios.get(`http://localhost:5000/api/message/${selectedChat._id}`,config);
+        const {data} = await axios.get(`/api/message/${selectedChat._id}`,config);
         setMessage(data);
  
      
@@ -217,7 +217,7 @@ const fetchChats = async ()=>{
               Authorization: `Bearer ${user.token}`
           }
       }
-      const { data } = await axios.get("http://localhost:5000/api/chat",config)
+      const { data } = await axios.get("/api/chat",config)
       setchats(data)
   } catch (error) {
       console.error(error)
