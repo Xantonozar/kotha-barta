@@ -8,6 +8,9 @@ import { ChatState } from '../context/ChatProvider'
 const Chats = () => {
     const {selectedChat , user} = ChatState()
     const [fetchAgain, setfetchAgain] = useState(false)
+    useEffect(()=>{
+        window.location.reload()
+    },[])
 useEffect(() => {
   if(selectedChat){
     const myChat = document.querySelector('.chat-body');
