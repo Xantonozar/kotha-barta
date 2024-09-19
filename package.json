@@ -5,9 +5,9 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start":"node backend/server.js",
+    "start": "node backend/server.js",
     "dev": "nodemon backend/server.js",
-    "build":"npm install --legacy-peer-deps && npm install --legacy-peer-deps --prefix frontend && npm run build --prefix frontend "
+    "build": "npm install --legacy-peer-deps && npm install --legacy-peer-deps --prefix frontend && npm run build --prefix frontend "
   },
   "author": "Salman Zadid",
   "license": "ISC",
@@ -17,6 +17,7 @@
     "body-parser": "^1.20.2",
     "colors": "^1.4.0",
     "cors": "^2.8.5",
+    "daisyui": "^4.12.10",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "express-async-handler": "^1.2.0",
