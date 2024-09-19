@@ -20,6 +20,7 @@ const LogIn = () => {
     setAnimation(false);
   };
   const handleSubmit = async () => {
+    alert("hello")
     setloading(true);
     if (!email || !password) {
       toast({
