@@ -34,7 +34,7 @@ const LogIn = () => {
       return;
     }
     try {
-      alert("logging in");
+      
       const config = {
         headers: {
           "Content-type": "application/json",
