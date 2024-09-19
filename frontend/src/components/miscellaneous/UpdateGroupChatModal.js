@@ -126,7 +126,7 @@ const renameGroupName = async()=>{
         };
       
         
-        const {data} = await axios.put(`http://localhost:5000/api/chat/rename`,{
+        const {data} = await axios.put(`/api/chat/rename`,{
             chatID: selectedChat._id,
             chatName: groupChatName,
         }, config);
@@ -176,7 +176,7 @@ const searchHandler = async(query)=>{
             }
        
             
-            const {data} =await  axios.get(`http://localhost:5000/api/user?search=${search}`,config)
+            const {data} =await  axios.get(`/api/user?search=${search}`,config)
     setLoading(false);
     setSearchResult(data);
   
@@ -233,7 +233,7 @@ const addToGroup = async(userToAdd)=>{
         };
         
 
-        const {data} = await axios.put(`http://localhost:5000/api/chat/groupadd`,{
+        const {data} = await axios.put(`/api/chat/groupadd`,{
             chatID: selectedChat._id,
             userID: userToAdd._id,
             // users: [...selectedChat.users, userToAdd],
