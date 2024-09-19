@@ -9,7 +9,7 @@ const Chats = () => {
     const {selectedChat , user} = ChatState()
     const [fetchAgain, setfetchAgain] = useState(false)
     useEffect(()=>{
-        window.location.reload()
+     
     },[])
 useEffect(() => {
   if(selectedChat){
