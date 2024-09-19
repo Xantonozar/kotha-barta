@@ -170,8 +170,14 @@ selectedChatCompare = selectedChat;
 
 
 }, [selectedChat]);
+{
+window.addEventListener('beforeunload', () => {
+  socket.disconnect();
+});
+}
 
   useEffect(() => {
+
     socket.on("message-recieved", (newMessageRecieved) => {
        
         fetchChats()
