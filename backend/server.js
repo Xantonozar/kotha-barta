@@ -113,7 +113,7 @@ io.on("connection",(socket)=>{
           
         })
 socket.on('disconnect', () => {
-      console.log("discoonected");
+      console.log("discoonected".yellow.bold);
       })
 socket.off("setup",()=>{
         console.log("user disconnected");
